@@ -25,7 +25,7 @@ def findAllByName():
     return Response(json.dumps(data,cls=DateEncoder), mimetype='application/json') # 采用json方式发送数据
 
 # 查询组
-@navigation.route("/findGroupList",methods=['POST'])
+@navigation.route("/findGroupList",methods=['POST','GET'])
 def findGroupList():
     navigationService =  NavigationService()
     data = navigationService.findGroupList()

@@ -29,14 +29,14 @@
         
             <ul class="list_con" >
                 <li class="app-list-con" v-for="item in showData" :key="item.uuid" >
-                    <a v-on:click="getDiscription(item.uuid)" >
+                    <a @click="getDiscription(item.uuid)" >
                         <img class="app-list-img" alt="item.name" title="item.name"  :src="item.logo_url">
                     </a>
                     
                     <div class="app-list-details">
                         <div class="app-list-name">
                             <h2>
-                                <a v-on:click="getDiscription(item.uuid)">{{item.name}}</a>
+                                <a @click="getDiscription(item.uuid)">{{item.name}}</a>
                             </h2>
                         </div>
                         <div class="app-list-des">
@@ -51,8 +51,7 @@
                     
                     
                     <div class="app-list-download">
-                        <!--<a v-on:click="getDiscription(item.uuid)">详细</a>-->
-                        <router-link tag="a" target="_blank" :to="{item}">详细</router-link>
+                        <a @click="getDiscription(item.uuid)">详细</a>
                     </div>
                 </li>
                
@@ -116,7 +115,7 @@ export default {
         this.loadType();
     },
     loadGroup:function(){
-        this.$http.post('http://localhost:3000/navigation/findGroupList',{}).then(function(res){
+        this.$http.post('http://175.163.76.169:3000/navigation/findGroupList',{}).then(function(res){
             this.groups = res.data;
             this.group= this.groups[0].group;
             this.loadType();
@@ -125,7 +124,7 @@ export default {
         })
     },
     loadType:function(){
-        this.$http.post('http://localhost:3000/navigation/findTypeList',{"group":this.group}).then(function(res){
+        this.$http.post('http://175.163.76.169:3000/navigation/findTypeList',{"group":this.group}).then(function(res){
             this.types = res.data;
             this.type=this.types[0].type;
             this.loadDate();
@@ -138,7 +137,7 @@ export default {
         // get请求 需要向后台传参数 语法：{params:{a:10,b:2}}
         // post 语法：params
         // this.$http.get('get.php',{params:{a:10,b:2}}).then(function(res){}
-        this.$http.post('http://localhost:3000/navigation/findAll',{"type":this.type,"group":this.group}).then(function(res){
+        this.$http.post('http://175.163.76.169:3000/navigation/findAll',{"type":this.type,"group":this.group}).then(function(res){
             this.showData = res.data;
         },function(res){
             console.log('失败')
@@ -150,7 +149,7 @@ export default {
     },
     search:function(){
         console.log(this.keyword)
-         this.$http.post('http://localhost:3000/navigation/findAllByName',{"name":this.keyword}).then(function(res){
+         this.$http.post('http://175.163.76.169:3000/navigation/findAllByName',{"name":this.keyword}).then(function(res){
             this.showData = res.data;
         },function(res){
             console.log('失败')

@@ -110,7 +110,7 @@ export default {
     }
   },
   mounted:function(){
-        this.$http.post('http://localhost:3000/navigation/findOne',{"uuid":this.uuid}).then(function(res){
+        this.$http.post('http://175.163.76.169:3000/navigation/findOne',{"uuid":this.uuid}).then(function(res){
             this.detialData = res.data;
             console.log(this.detialData)
         },function(res){
@@ -119,7 +119,7 @@ export default {
   },
   methods:{
       parise:function(){
-          this.$http.post('http://localhost:3000/navigation/updatePraise',{"uuid":this.uuid}).then(function(res){
+          this.$http.post('http://175.163.76.169:3000/navigation/updatePraise',{"uuid":this.uuid}).then(function(res){
             this.detialData.praise_num=this.detialData.praise_num+1;
             console.log(this.detialData)
         },function(res){
