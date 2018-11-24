@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <el-container>
-      <el-aside width="200px">Aside</el-aside>
-      <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
-        <el-footer>Footer</el-footer>
-      </el-container>
-    </el-container>
+
+    <router-view />
+
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'App'
+
+  name: 'App',
+  data :function() {
+    return {
+     
+    }
+  },
+  mounted:function(){
+     
+  },
+  methods: {
+
+  }
 }
 </script>
 
@@ -51,4 +59,9 @@ export default {
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
   }
+
+  .Footer{
+      display: none;
+  }
+
 </style>

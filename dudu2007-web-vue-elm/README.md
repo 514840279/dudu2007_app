@@ -11,6 +11,7 @@
 npm install -g npm-install-peers
 
 npm install
+#npm i vue-resource -S
 #npm install --save vue-router
 #npm install vuex --save
 #npm install axios --save

@@ -7,6 +7,7 @@ from flask import Flask, Response,render_template
 # 引入 模块
 from controller.Search import dosearch as search_blueprinit
 from controller.Crawler import crawler as crawler_blueprinit
+from controller.Navigation import navigation as navigation_blueprinit
 # BASE_DIR建立一个基础路径，用于静态文件static，templates的调用
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -15,6 +16,7 @@ app=Flask(__name__,template_folder='templates',static_folder='static')
 # 使用 蓝图 注册不同模块
 app.register_blueprint(crawler_blueprinit,url_prefix='/crawler')
 app.register_blueprint(search_blueprinit,url_prefix='/search')
+app.register_blueprint(navigation_blueprinit,url_prefix='/navigation')
 
 
 # 当访问 "/"，"/index"，"/home","incex.hltml" 默认跳转到 "/index.hmtl" 模板中渲染首页
@@ -45,6 +47,15 @@ def getUser():
 ######################################
 #           错误控制中心             #
 ######################################
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,session_id')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS,HEAD')
+    # 这里不能使用add方法，否则会出现 The 'Access-Control-Allow-Origin' header contains multiple values 的问题
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
+
 # 统一错误返回配置方法
 def Response_headers(content):
     resp = Response(content)

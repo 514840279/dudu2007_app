@@ -43,14 +43,14 @@ function successSearch(result){
         console.log(value);
         var item = content.find(".item:eq(0)").clone(false);
         item.css({"display":""});
-        item.find(".item_a_a").text(value[1]);
+        item.find(".item_a_a").text(value.title);
         item.find(".item_a_a").bind("click",function(){
-            window.open(value[2]);
+            window.open(value.url);
         })
-        item.find(".item_c").text(value[3]);
+        item.find(".item_c").text(value.summary);
         item.find(".item_d").find("span").text("百度快照");
         item.find(".item_d").bind("click",function(){
-            window.open( value[4]);
+            window.open( value.snapshot);
         })
 
         content.append(item);

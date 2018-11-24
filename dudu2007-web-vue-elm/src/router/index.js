@@ -1,17 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import MainMainpage from '@/components/MainMainpage'
+import MainMainpageList from '@/components/MainMainpageList'
+import MainMainpageDetial from '@/components/MainMainpageDetial'
+
 
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
     
+    {
+      path: '/list',
+      name: 'MainMainpageList',
+      component: MainMainpageList,
+    },{
+      path: '/detial/:uuid',
+      name: 'MainMainpageDetial',
+      component: MainMainpageDetial,
+    }
+
   ]
+  
 })
