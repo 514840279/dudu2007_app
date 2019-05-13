@@ -5,10 +5,10 @@ import App from './App'
 import VueResource from 'vue-resource'
 import router from './router'
 import store from './store'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+//import ElementUI from 'element-ui'
+//import 'element-ui/lib/theme-chalk/index.css'
 
-Vue.use(ElementUI)
+//Vue.use(ElementUI)
 Vue.use(VueResource)
 
 Vue.config.productionTip = false
@@ -22,4 +22,4 @@ new Vue({
   template: '<App/>'
 })
 
-router.push('/list')
+router.push('/mainIfram')

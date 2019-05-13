@@ -19,10 +19,10 @@ npm install
 #npm i element-ui -S
 
 # serve with hot reload at localhost:8080
-npm run dev
+cnpm run dev
    http://localhost/
 # build for production with minification
-npm run build
+cnpm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
