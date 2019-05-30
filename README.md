@@ -1,6 +1,7 @@
 # dudu2007_app
-手机版的 丽华数据分析导航
+包含三个项目
 
-项目实现包含两部分
-前端 app 实现使用 vue-elm
-后端代码使用python简单服务flask搭建
+
+    dudu2007-web-vue-elm   --- vue编写的页面,编写页面逻辑和压缩代码
+    dudu2007_flask         --- python编写的flask服务，提供web服务测试
+    dudu2007_tools         --- 打包管理工具，用与将页面包装成apk等安装程序
