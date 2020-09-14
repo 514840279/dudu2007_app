@@ -8,3 +8,8 @@ cordova serve
 
 
 cordova build android
+
+"C:\Program Files\nodejs\node_modules\npm\cordova" build android
+
+
+启动图片必须是png格式

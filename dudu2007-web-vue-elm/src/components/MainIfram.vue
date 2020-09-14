@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <iframe src="http://lqab.net:1976/" frameborder=0 name="showHere"   id="show-iframe" ></iframe>
+    <iframe src="https://lqab.net:1976/" frameborder=0 name="showHere"   id="show-iframe" ></iframe>
   </div>
 </template>
 
